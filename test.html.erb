@@ -18,18 +18,16 @@
       <%  data << "ゴーヤの大きさ：#{record["weight"]}　売った相手：#{record["give_for"]}" %>
     <% end %>
 
-    <% result_2 = connection.exec("SELECT * FROM crops WHERE quality = false;") %>
+    <% result_2 = connection.exec("SELECT weight, give_for FROM crops WHERE quality = false;") %>
    <% data_2 = [] %>
    <% result_2.each do |record_2| %>
-     <%  data_2 << "ゴーヤの長さ：#{record_2["length"]}　ゴーヤの重さ：#{record_2["weight"]}　ゴーヤの品質：#{record_2["quality"]}　
-     売った相手：#{record_2["give_for"]}　年月日：#{record_2["date"]}" %>
+     <%  data_2 << "ゴーヤの大きさ：#{record_2["weight"]}　売った相手：#{record_2["give_for"]}" %>
    <% end %>
 
-   <% result_3 = connection.exec("SELECT * FROM crops WHERE NOT(give_for = '自家消費');") %>
+   <% result_3 = connection.exec("SELECT weight, give_for FROM crops WHERE NOT(give_for = '自家消費');") %>
     <% data_3 = [] %>
     <% result_3.each do |record_3| %>
-      <%  data_3 << "ゴーヤの長さ：#{record_3["length"]}　ゴーヤの重さ：#{record_3["weight"]}　ゴーヤの品質：#{record_3["quality"]}　
-      売った相手：#{record_3["give_for"]}　年月日：#{record_3["date"]}" %>
+      <%  data_3 << "ゴーヤの大きさ：#{record_3["weight"]}　売った相手：#{record_3["give_for"]}" %>
     <% end %>
 
     <form action="goya.cgi" method="POST">

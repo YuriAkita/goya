@@ -16,7 +16,7 @@ cgi.out("type" => "text/html", "charset" => "UTF-8") {
 }
 elsif cgi.include?('goya_2')
 cgi.out("type" => "text/html", "charset" => "UTF-8") {
-get = cgi['goya']
+get = cgi['goya_2']
   "<html>
     <body>
       <p>品質が悪いもの（false）のgoyaの情報は下記になります</p>
@@ -26,7 +26,7 @@ get = cgi['goya']
 }
 elsif cgi.include?('goya_3')
 cgi.out("type" => "text/html", "charset" => "UTF-8") {
-  get = cgi['goya']
+  get = cgi['goya_3']
   "<html>
     <body>
       <p>譲渡先が自家消費ではないもののgoyaの情報は下記になります</p>
